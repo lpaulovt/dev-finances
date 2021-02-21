@@ -32,7 +32,7 @@ Taking care of your money can be simple. With Dev-Finances, you organize your fi
    <img alt="Demo on Netlify" width="50%" src="https://i.ibb.co/Twn1Sxr/ezgif-com-gif-maker-1.gif">
 </p>
 <p align="center">
-  <a href="https://lpaulovt.github.io/dev-finance/" target="_blank">
+  <a href="https://lpaulovt.github.io/dev-finances/" target="_blank">
     <img alt="Demo" src="./assets/button.svg">
   </a>
 </p>
