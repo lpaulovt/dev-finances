@@ -76,4 +76,4 @@ This project is under the MIT license. See the [LICENSE](https://github.com/lpau
 
 ---
 
-Made with ♥ by Paulo Lopes :wave: [Get in touch!](https://www.linkedin.com/in/lpaulovt/)
+Made with 🧡 by Paulo Lopes :wave: [Get in touch!](https://www.linkedin.com/in/lpaulovt/)
