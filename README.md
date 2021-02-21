@@ -40,7 +40,7 @@ Taking care of your money can be simple. With Dev-Finances, you organize your fi
 
 ## :sparkles: New Features
 
-- Visual card to alert the user about your financial health;
+- A card to alert the user about your financial health;
 - Dark Theme;
 - Filter transactions (Date and type);
 - Download Csv file of your transactions;
