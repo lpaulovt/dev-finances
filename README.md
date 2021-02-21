@@ -1,6 +1,5 @@
 <h1 align="center">
-      <img alt="Demo" src="./assets/logo.svg">
-
+      <img alt="Logo" width="80%"src="https://i.ibb.co/cXRyKGv/Frame-6.png">
 </h1>
 
 <p align="center">
@@ -33,7 +32,7 @@ Taking care of your money can be simple. With Dev-Finances, you organize your fi
    <img alt="Demo on Netlify" width="50%" src="https://i.ibb.co/Twn1Sxr/ezgif-com-gif-maker-1.gif">
 </p>
 <p align="center">
-  <a href="" target="_blank">
+  <a href="https://lpaulovt.github.io/dev-finance/" target="_blank">
     <img alt="Demo" src="./assets/button.svg">
   </a>
 </p>
