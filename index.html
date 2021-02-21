@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev.finance$ - Challenge</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/logo.svg" alt="Logo Dev Finance" id="logo" />
+      <button type="button" id="btn_theme" onclick="Theme.click()">
+        <img src="./assets/theme-light.svg" alt="Light mode" id="theme_icon" />
+      </button>
+    </header>
+
+    <main class="container">
+      <section id="header">
+        <div class="card_large">
+          <div>
+            <h1 class="situation"></h1>
+            <p class="phrase"></p>
+          </div>
+   
+          <img src="./assets/positive-illustration.svg" alt="" class="icon" />
+          <img src="./assets/background-shape.svg" alt="" class="background" />
+        </div>
+
+        <div id="balance">
+          <div class="card">
+            <h3>
+              <span class="title"> Entradas </span>
+            </h3>
+            <h3>
+              <p id="incomeDisplay">R$ 0,00</p>
+            </h3>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span class="title"> Saídas </span>
+            </h3>
+            <h3>
+              <p id="expenseDisplay">R$ 0,00</p>
+            </h3>
+          </div>
+
+          <div class="card total">
+            <h3>
+              <span id="total-text"> Total </span>
+            </h3>
+            <p id="totalDisplay">R$ 0,00</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="transaction">
+        <div id="buttons">
+          <button href="#" onclick="Modal.open()" id="new_transaction">
+            <img src="./assets/total.svg" alt="Image de total" />
+            <span>Nova Transação</span>
+          </button>
+
+          <div class="right-content">
+            <button href="#" onclick="Filter.open()" id="filter">
+              <img src="./assets/filter.svg" alt="Image de total" />
+            </button>
+            <button id="download" onclick="Csv.download()">
+              <img src="./assets/down.svg" class="svg-down" alt="" />
+              <span>Baixar</span>
+            </button>
+          </div>
+        </div>
+
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <div class="modal-overlay add">
+      <div class="modal">
+        <div id="form">
+          <h2>Nova Transação</h2>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label class="sr-only" for="description">Descrição</label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Descrição"
+              />
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="amount">Valor</label>
+              <input
+                type="number"
+                step="0.01"
+                id="amount"
+                name="amount"
+                placeholder="0,00"
+              />
+            
+            </div>
+
+            <div class="input-group filter">
+              <button type="button" onclick="" class="btn-filter income">
+                <input type="radio" name="type" id="input-radio-income" value="" checked> 
+                <label for="input-income">
+                  <img src="./assets/income-icon.svg" alt="" />
+                  <span>Ganhos</span>
+                </label>
+               
+              </button>
+              <button type="button" onclick="" class="btn-filter expense">
+                <input type="radio" name="type" id="input-radio-expense" value="-">
+               <label for="input-expense">
+                <img src="./assets/expense-icon.svg" alt="" /> 
+                <span>Despesas</span>
+               </label>
+              </button>
+              </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="date">Data</label>
+              <input type="date" id="date" name="date" />
+            </div>
+
+            <div class="input-group actions">
+              <a onclick="Modal.close()" href="#" class="button cancel"
+                >Cancelar</a
+              >
+              <button>Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay filter">
+      <div class="modal">
+        <div id="form">
+          <h2>Filtrar por data</h2>
+          <form action="">
+            <div class="input-group filter">
+              <div class="input-group" style="margin-right: 5px">
+                <label class="sr-only" for="date">Data inicial</label>
+                <input type="date" id="startDate" name="date" />
+              </div>
+
+              <div class="input-group" style="margin-left: 5px">
+                <label class="sr-only" for="date">Data final</label>
+                <input type="date" id="endDate" name="date" />
+              </div>
+              </div>
+
+              <div class="input-group filter">
+              <button type="button" onclick="" class="btn-filter income">
+                <input type="checkbox" name="income" id="input-income">
+                <label for="input-income">
+                  <img src="./assets/income-icon.svg" alt="" />
+                  <span>Ganhos</span>
+                </label>
+               
+              </button>
+              <button type="button" onclick="" class="btn-filter expense">
+                <input type="checkbox" name="expense" id="input-expense">
+               <label for="input-expense">
+                <img src="./assets/expense-icon.svg" alt="" /> 
+                <span>Despesas</span>
+               </label>
+              </button>
+              </div>
+
+            </div>
+            <div class="input-group actions">
+              <a onclick="Filter.close()" href="#" class="button cancel"
+                >Cancelar</a
+              >
+              <button type="button" onclick="Filter.submit()">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+    <p> Made with 🧡 by Paulo Lopes.</p>
+    <ul>
+      <li><a href="https://github.com/lpaulovt" target="_blank"><img src="./assets/github.svg" alt="Github"></a></li>
+      <li><a href="https://www.linkedin.com/in/lpaulovt/" target="_blank"><img src="./assets/linkedin.svg" alt="LinkedIn"></a></li>
+      <li><a href="https://www.instagram.com/lpaulovt/" target="_blank"><img src="./assets/instagram.svg" alt="Instagram"></a></li>
+    </ul>
+  </footer>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
